@@ -24,7 +24,8 @@ const [defaultMovies, setDefaultMovies] = useState([]);
 
    const getFilmRequest = async (searchFilm) => {
         //make the request to the API
-       const url = `http://www.omdbapi.com/?s=${searchFilm}&apikey=cd2e136f`;
+       const url = `https://www.omdbapi.com/?s=${searchFilm}&apikey=cd2e136f`;
+
 
        const response = await fetch(url);
         //convert the response to JSON

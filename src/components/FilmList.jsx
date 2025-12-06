@@ -7,7 +7,7 @@ const FilmList = (props) => {
     return(
 
         <>
-        {props.films.map((film, index) => (
+        {props.films?.map((film, index) => (
              <div key={index} 
                   className={`image-container col-md-2 col-sm-4 mb-4 d-flex justify-content-center ${props.isDefault ? "default-movie" : ""}`}>
 
