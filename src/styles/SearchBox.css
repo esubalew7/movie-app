@@ -1,0 +1,40 @@
+/* Wrapper ensures proper alignment */
+.search-box-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Container with icon + input */
+.search-box {
+    position: relative;
+    width: 100%;
+}
+
+/* INPUT STYLE */
+.search-input {
+    width: 100%;
+    height: 50px;                 /* Increase height */
+    padding-left: 45px;           /* Space for icon */
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 10px;          /* smoother UI */
+    border: 2px solid #ccc;
+    transition: 0.3s ease;
+}
+
+/* Focus animation */
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+/* SEARCH ICON STYLE */
+.search-icon {
+    position: absolute;
+    left: 15px;                    /* icon inside input */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #666;
+    pointer-events: none;
+}
