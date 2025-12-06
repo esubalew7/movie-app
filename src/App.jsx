@@ -174,23 +174,19 @@ const closeModal = () => setTrailerKey("");
     <div className="App container-fluid film-css">
 
 {/*Film Top header */}
-       <div className="film-header row d-flex align-items-center mb-5 fixed-top shadow-sm p-2"> 
+       <div className="film-header row d-flex align-items-center mb-5 fixed-top shadow-sm"> 
          {/* Top header only once */}  
-         <div className="col-7">
+         <div className="col">
           <FilmListHeading heading="Films" />
           </div>            
          
           {/* Search box */}
-           <div className="col-5">
+           <div className="col">
              <SearchBox searchFilm={searchFilm} setSearchFilm={setSearchFilm} />
           </div>                 
           
        </div> 
-       {/* Add margin to the next element */}
-        <div className="mb-5">
-          {/* Your content goes here */}
-        </div>
-
+     
 <h2 className="section-title mt-5 mb-3">Popular Movies</h2>
 
 {/*To add Favorite Film list*/}
@@ -203,8 +199,8 @@ const closeModal = () => setTrailerKey("");
           openDetails={openDetails}
           isDefault={searchFilm.trim() === ""}  
         />
-
       </div> 
+
   {/*Favorite Film list*/}    
        <div className="row d-flex align-items-center mt-4 mb-4 film-list" >
          <h2 className="section-title mt-5 mb-3">Your Favorites</h2>
