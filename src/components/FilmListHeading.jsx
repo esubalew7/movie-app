@@ -1,5 +1,5 @@
 import React from "react";
-import "./FilmListHeading.css";  // Create this small CSS file
+
 
 const FilmListHeading = () => {
   return (

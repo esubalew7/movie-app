@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import './App.css'
+import './styles/App.css';
 import FilmList from './components/FilmList';
 import FilmListHeading from './components/FilmListHeading';
 import SearchBox from './components/SearchBox';
@@ -102,6 +102,7 @@ useEffect(() => {
          saveToLocalStorage(newFavoriteList);  //call to save the local storage
      }
 
+
 //for remove from favorite list
      const removeFavoriteFilm = (film) => {
          const newFavoriteList = favoriteFilm.filter(        //.filter() = array method that Loops through the entire array and Checks a condition
@@ -113,6 +114,7 @@ useEffect(() => {
 
 //function to fetch trailer
 const [trailerKey, setTrailerKey] = useState("");
+
 const getTrailer = async (film) => {
   const title = film.Title;
   // 1. Search movie in TMDb
@@ -144,6 +146,7 @@ const getTrailer = async (film) => {
   }
 };
 
+
 //for detail component
 const [selectedFilm, setSelectedFilm] = useState(null);
 const [filmDetails, setFilmDetails] = useState(null);
@@ -159,13 +162,12 @@ const openDetails = async (film) => {
   setFilmDetails(data);
 };
 
+
 //close modal
 const closeDetails = () => {
   setSelectedFilm(null);
   setFilmDetails(null);
 };
-
-
 
 
 const closeModal = () => setTrailerKey("");
