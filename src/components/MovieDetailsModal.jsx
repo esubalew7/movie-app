@@ -1,5 +1,5 @@
 import React from "react";
-import ".styles/MovieDetailsModal.css";
+import "..styles/MovieDetailsModal.css";
 
 
 const MovieDetailsModal = ({ film, details, closeDetails, addToFavorites, openTrailer }) => {
