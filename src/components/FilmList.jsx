@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-
 const FilmList = (props) => {
     const Favorites = props.favorites;
     return(

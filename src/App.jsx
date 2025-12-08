@@ -177,7 +177,7 @@ const closeModal = () => setTrailerKey("");
     <div className="App container-fluid film-css">
 
 {/*Film Top header */}
-       <div className="film-header row d-flex align-items-center mb-5 fixed-top shadow-sm"> 
+       <div className="film-header d-flex align-items-center mb-5 fixed-top shadow-sm"> 
          {/* Top header only once */}  
          <div className="col">
           <FilmListHeading heading="Films" />

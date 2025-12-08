@@ -14,8 +14,8 @@ const FilmListHeading = () => {
         />
         <h1 className="app-title">E-MovieTrailers</h1>
       </div>
-      
-     
+  
+
     </header>
   );
 };
