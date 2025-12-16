@@ -1,67 +1,105 @@
-/* ============================
-   GLOBAL
-============================ */
+/* GLOBAL */
 .App {
     background: #141414;
     color: #fff;
    padding-top: 80px;
 }
 
-/*  HEADER */
+/* HEADER FULL BAR */
 .film-header {
-    background: #1b1b1b;
-    border-bottom: 2px solid #ffcc00;
-    position: fixed;
-    top: 0;
-    width: 100%; 
+  background: #1b1b1b;
+  border-bottom: 2px solid #ffcc00;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  z-index: 2000;
+}
+
+/* INNER LEFT: Logo + Title */
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .app-logo {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.4);
 }
 
 .app-title {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: #ffcc00;
   letter-spacing: 1px;
   margin: 0;
 }
 
-
-/* FILM GRID */
- .default-movie {    /*For default movie */
-  padding: 10px;
-}
-.default-movie img {
-  width: 100%;             
-  height: 260px;
+/* Larger inputs */
+.header-search input {
+  height: 48px !important;
+  width: 300px;
+  font-size: 17px;
   border-radius: 10px;
-  object-fit: cover;
 }
 
-.film-list {
-  display: flex;
-  flex-wrap: wrap;       /* allow multiple rows */
+
+/* ============= DEFAULT GRID ============= */
+.default-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px 10px;
+}
+
+/* Default movie poster sizing */
+.default-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Default cards have no hover zoom */
+.default-card img:hover {
+  transform: none;
+  cursor: pointer;
+}
+
+/* ============= NORMAL FILM GRID ============= */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
 }
 
-/*Poster Style*/
-.image-container {
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
-    overflow: hidden;
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
-.image-container:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+
+.movie-poster {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: 0.3s ease;
 }
+
+/* Hover effect only for normal movies */
+.film-grid .movie-card:hover .movie-poster {
+  transform: scale(1.05);
+}
+
 /* BUTTON BAR UNDER POSTER */
 .overlay {
     position: absolute;

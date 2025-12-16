@@ -1,22 +1,24 @@
 import React from "react";
-
+import "../styles/App.css";  
 
 const FilmListHeading = () => {
   return (
-    <header className="d-flex align-items-center justify-content-between py-3">
+    <div className="header-container">
       
-      {/* Left side: Logo + Brand */}
-      <div className="d-flex align-items-center gap-3">
+      {/* Left Section: Logo + Title */}
+      <div className="header-left">
         <img 
-          src="/logo2.jpg" 
-          alt="E-MovieTrailers Logo" 
+          src="/logo2.png"
+          alt="E-MovieTrailers Logo"
           className="app-logo"
         />
+
         <h1 className="app-title">E-MovieTrailers</h1>
       </div>
-  
 
-    </header>
+      {/* Right Section: Placeholder for search (controlled in App.jsx) */}
+          
+    </div>
   );
 };
 

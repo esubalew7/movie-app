@@ -174,66 +174,65 @@ const closeModal = () => setTrailerKey("");
 
 
   return (
-    <div className="App container-fluid film-css">
+        <div className="App container-fluid film-css">
 
-{/*Film Top header */}
-       <div className="film-header d-flex align-items-center mb-5 fixed-top shadow-sm"> 
-         {/* Top header only once */}  
-         <div className="col">
-          <FilmListHeading heading="Films" />
-          </div>            
-         
-          {/* Search box */}
-           <div className="col">
-             <SearchBox searchFilm={searchFilm} setSearchFilm={setSearchFilm} />
-          </div>                 
-          
-       </div> 
-     
-<h2 className="section-title mt-5 mb-3">Popular Movies</h2>
+          {/* Film Top Header */}
+        <div className="film-header fixed-top shadow-sm">
 
-{/*To add Favorite Film list*/}
-      <div className="row mt-5">
-       <FilmList 
-          films={searchFilm.trim() === "" ? defaultMovies : films}
-          favoritesChosen={addFavoriteFilm}
-          favorites={AddFavorites}
-          onTrailerClick={getTrailer}
-          openDetails={openDetails}
-          isDefault={searchFilm.trim() === ""}  
-        />
-      </div> 
+          <FilmListHeading />
 
-  {/*Favorite Film list*/}    
-       <div className="row d-flex align-items-center mt-4 mb-4 film-list" >
-         <h2 className="section-title mt-5 mb-3">Your Favorites</h2>
-      </div>
+          {/* Search at the right */}
+          <div className="header-search">
+            <SearchBox searchFilm={searchFilm} setSearchFilm={setSearchFilm} />
+          </div>
 
-{/*To Remove from Favorite Film list*/}
-       <div className="row">
-        <FilmList 
-          films={favoriteFilm}
-          favoritesChosen={removeFavoriteFilm}
-          favorites={RemoveFavorite}
-          onTrailerClick={getTrailer}
-          openDetails={openDetails}
-        />
+        </div>
 
-      </div> 
-{/* MovieDetailsModal component */}
-      <MovieDetailsModal 
-          film={selectedFilm}
-          details={filmDetails}
-          closeDetails={closeDetails}
-          addToFavorites={addFavoriteFilm}
-          openTrailer={getTrailer}
-        />
+        
+    <h2 className="section-title mt-5 mb-3">Popular Movies</h2>
 
+    {/*Film List and To add Favorite Film list*/}
+          <div className="row mt-5">
+          <FilmList 
+              films={searchFilm.trim() === "" ? defaultMovies : films}
+              favoritesChosen={addFavoriteFilm}
+              favorites={AddFavorites}
+              onTrailerClick={getTrailer}
+              openDetails={openDetails}
+              isDefault={searchFilm.trim() === ""}  
+            />
+          </div> 
 
-      <TrailerModal trailerKey={trailerKey} closeModal={closeModal} />
+      {/*Favorite Film list*/}    
+          <div className="row d-flex align-items-center mt-4 mb-4 film-list" >
+            <h2 className="section-title mt-5 mb-3">Your Favorites</h2>
+          </div>
+
+    {/*To Remove from Favorite Film list*/}
+          <div className="row">
+            <FilmList 
+              films={favoriteFilm}
+              favoritesChosen={removeFavoriteFilm}
+              favorites={RemoveFavorite}
+              onTrailerClick={getTrailer}
+              openDetails={openDetails}
+            />
+
+          </div> 
+    {/* MovieDetailsModal component */}
+          <MovieDetailsModal 
+              film={selectedFilm}
+              details={filmDetails}
+              closeDetails={closeDetails}
+              addToFavorites={addFavoriteFilm}
+              openTrailer={getTrailer}
+            />
 
 
-    </div>  
+          <TrailerModal trailerKey={trailerKey} closeModal={closeModal} />
+
+
+        </div>  
       ); 
 }
 
